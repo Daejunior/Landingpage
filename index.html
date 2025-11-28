@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Skills Workshop • First 20 Spots = ₦5,000 Only</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --accent: #ff006e;
+            --success: #06d6a0;
+            --light: #f8f9fa;
+            --dark: #0f0f1e;
+        }
+        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: linear-gradient(135deg, #0f0f1e 0%, #16213e 100%);
+            color: var(--light);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { width:90%; max-width:1200px; margin:0 auto; padding:20px; }
+
+        header {
+            text-align:center;
+            padding:30px 0;
+            background: rgba(0,0,0,0.3);
+            border-bottom:1px solid rgba(255,255,255,0.1);
+        }
+        .logo {
+            font-size:3rem;
+            font-weight:900;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip:text;
+            background-clip:text;
+            color:transparent;
+        }
+
+        /* Typing Animation */
+        #typed { 
+            font-size:3.2rem; 
+            font-weight:900; 
+            background: linear-gradient(90deg, #00ffea, #ff00c8, #ffff00);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            display:inline-block;
+            min-height:80px;
+        }
+        #cursor { color:#00ffea; animation:blink 1s infinite; font-weight:900; }
+        @keyframes blink { 50%{opacity:0;} }
+
+        .hero { text-align:center; padding:80px 20px; }
+        .hero p { font-size:1.4rem; max-width:800px; margin:30px auto; opacity:0.9; }
+
+        /* Beautiful Animated Countdown */
+        .countdown {
+            background: linear-gradient(0,0,0,0.4);
+            backdrop-filter: blur(20px);
+            padding:50px 20px;
+            border-radius:25px;
+            text-align:center;
+            margin:60px auto;
+            max-width:900px;
+            border:2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .countdown h2 {
+            font-size:2.5rem;
+            margin-bottom:30px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip:text;
+            color:transparent;
+        }
+        .timer {
+            display:flex;
+            justify-content:center;
+            gap:25px;
+            flex-wrap:wrap;
+        }
+        .timer-box {
+            background: rgba(255,255,255,0.1);
+            padding:25px 20px;
+            border-radius:20px;
+            min-width:130px;
+            backdrop-filter: blur(10px);
+            border:2px solid var(--primary);
+            box-shadow: 0 0 40px rgba(58,134,255,0.4);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        .timer-value {
+            font-size:3.8rem;
+            font-weight:900;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(90deg, #00ffea, #ff00c8);
+            -webkit-background-clip:text;
+            color:transparent;
+        }
+        .timer-label {
+            font-size:1rem;
+            opacity:0.8;
+            margin-top:8px;
+            letter-spacing:2px;
+        }
+        @keyframes glow {
+            from { box-shadow:0 0 20px rgba(58,134,255,0.4); }
+            to   { box-shadow:0 0 50px rgba(58,134,255,0.8); }
+        }
+
+        .section-title {
+            text-align:center;
+            font-size:2.8rem;
+            margin:60px 0 40px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip:text;
+            color:transparent;
+        }
+        .benefits { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px; padding:20px 0; }
+        .benefit-card {
+            background:rgba(255,255,255,0.05);
+            padding:40px 25px;
+            border-radius:20px;
+            text-align:center;
+            border:1px solid rgba(255,255,255,0.1);
+            transition:0.4s;
+        }
+        .benefit-card:hover { transform:translateY(-15px); border-color:var(--primary); box-shadow:0 20px 40px rgba(0,0,0,0.3); }
+        .benefit-icon { font-size:3.5rem; margin-bottom:20px; background:linear-gradient(var(--primary),var(--accent)); -webkit-background-clip:text; color:transparent; }
+
+        .limited-offer {
+            background: linear-gradient(45deg,rgba(255,0,110,0.2),rgba(131,56,236,0.2));
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+            border:2px dashed var(--accent);
+            font-size:1.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100%{box-shadow:0 0 20px rgba(255,0,110,0.5);} 50%{box-shadow:0 0 40px rgba(255,0,110,0.9);} }
+
+        .price {
+            font-size:5rem;
+            font-weight:900;
+            text-align:center;
+            background: linear-gradient(90deg,#00ffea,#ff006e);
+            -webkit-background-clip:text;
+            color:transparent;
+            margin:30px 0;
+        }
+        .discount { font-size:2.5rem; text-decoration:line-through; opacity:0.6; }
+
+        .wa-btn {
+            display:inline-block;
+            background:#25d366;
+            color:white;
+            padding:18px 50px;
+            border-radius:50px;
+            font-size:1.5rem;
+            font-weight:700;
+            text-decoration:none;
+            box-shadow:0 15px 40px rgba(37,211,102,0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        .wa-btn:hover { transform:scale(1.05); }
+        @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
+
+        footer { text-align:center; padding:60px 20px; background:rgba(0,0,0,0.5); margin-top:80px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">AI MONEY WORKSHOP</div>
+            <div class="tagline" style="font-size:1.4rem;margin-top:10px;">December 6th – 7th, 2025 • Physical + Online</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 id="typed"></h1>
+            <script>
+                new Typed('#typed', {
+                    strings: [
+                        "Turn AI Into Your Money Machine",
+                        "₦500k+/Month Is Possible",
+                        "No Coding Required",
+                        "First 20 Spots Only ₦5,000"
+                    ],
+                    typeSpeed: 70,
+                    backSpeed: 50,
+                    backDelay: 2000,
+                    loop: true,
+                    showCursor: false
+                });
+            </script>
+            <p style="font-size:1.5rem;margin-top:30px;">
+                Join our 2-day intensive workshop and learn practical AI skills that businesses in Nigeria and abroad are desperately paying for right now
+            </p>
+            <a href="#payment" class="wa-btn style="margin-top:30px;">Reserve My Spot Now</a>
+        </div>
+    </section>
+
+    <!-- Beautiful Animated Countdown -->
+    <section class="countdown">
+        <div class="container">
+            <h2>Workshop Starts In</h2>
+            <div class="timer">
+                <div class="timer-box">
+                    <div class="timer-value" id="days">00</div>
+                    <div class="timer-label">DAYS</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">HOURS</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">MINUTES</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">SECONDS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of your original sections (kept exactly the same layout you love) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What You'll <span style="color:var(--accent)">Learn</span></h2>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Build Websites Using AI (No Code)</h3>
+                    <p>Sell for ₦20k–₦120k each</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Create AI Chat Agents</h3>
+                    <p>Customer support & sales bots companies pay for instantly</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-keyboard"></i></div>
+                    <h3>Master Prompt Engineering</h3>
+                    <p>The real engine behind dollar earnings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="payment" style="padding:80px 0;">
+        <div class="container" style="text-align:center;">
+            <div class="limited-offer">
+                <h3>LIMITED: First 20 People Only</h3>
+                <p style="font-size:2rem;margin:15px 0;">₦5,000 instead of ₦20,000</p>
+            </div>
+
+            <div class="price">
+                <span class="discount">₦20,000</span><br>₦5,000
+            </div>
+
+            <div style="background:rgba(255,255,255,0.1);padding:40px;border-radius:20px;max-width:600px;margin:40px auto;">
+                <h3 style="margin-bottom:30px;font-size:2rem;">Pay to:</h3>
+                <p style="font-size:1.6rem;line-height:2;">
+                    <strong>Bank:</strong> FCMB<br>
+                    <strong>Name:</strong> David Ajewole<br>
+                    <strong>Account:</strong> 0682662014
+                </p>
+                <p style="margin:40px 0;font-size:1.5rem;">
+                    Send proof to WhatsApp →<br>
+                    <a href="https://wa.me/2347043107778?text=I just paid ₦5,000 for AI Workshop" class="wa-btn" style="margin-top:20px;display:inline-block;">
+                        Send Proof Now
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 AI Money Workshop • Contact: +2347043107778</p>
+        </div>
+    </footer>
+
+    <!-- Countdown Script (Beautiful Version) -->
+    <script>
+        const workshopDate = new Date("December 6, 2025 09:00:00").getTime();
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = workshopDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.querySelector('.countdown').innerHTML = "<h2 style='color:var(--accent);'>WE ARE LIVE NOW!</h2>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
